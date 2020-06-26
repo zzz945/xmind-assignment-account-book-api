@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/zzz945/xmind-assignment-account-book-api#readme",
   "dependencies": {
+    "alasql": "^0.6.2",
     "koa": "2.12.0",
-    "koa-router": "^9.0.1"
+    "koa-router": "^9.0.1",
+    "moment": "^2.27.0",
+    "sqlite3": "^4.2.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",

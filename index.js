@@ -9,6 +9,8 @@ modules.init(router)
 app.use(router.routes())
 app.use(router.allowedMethods())
 
+require('./common/log')
+
 const port = 8108;
 app.listen(port);
 

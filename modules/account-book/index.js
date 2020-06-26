@@ -1,6 +1,8 @@
 function init (router, basePath) {
-  console.log(`${basePath}/get-bill-list`)
   router.get(`${basePath}/get-bill-list`, require('./get-bill-list'))
+  router.post(`${basePath}/insert-bill`, require('./insert-bill'))
+  router.get(`${basePath}/insert-bill`, require('./insert-bill'))
+  router.get(`${basePath}/get-categories`, require('./get-categories'))
 }
 
 module.exports = {
