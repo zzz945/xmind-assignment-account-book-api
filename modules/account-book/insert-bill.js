@@ -10,7 +10,7 @@ async function insertBill(ctx) {
   } = ctx.request.query
 
   type = +type
-  time = +time
+  time = new Date(time).getTime()
   amount = +amount
 
   try {  
