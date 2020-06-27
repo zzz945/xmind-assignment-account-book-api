@@ -1,6 +1,8 @@
 const Koa = require('koa')
 const app = new Koa();
 
+app.use(require('./common/cross-middleware'))
+
 const Router = require('koa-router')
 const router = new Router()
 
