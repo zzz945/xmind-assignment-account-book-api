@@ -5,7 +5,7 @@ async function getCategories (ctx) {
   let {
     name,
     pageNum = 1, 
-    pageSize = 20,
+    pageSize = 100,
   } = ctx.request.query
 
   pageNum = +pageNum
