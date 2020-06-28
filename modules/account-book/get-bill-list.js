@@ -71,7 +71,12 @@ async function getBillList(ctx) {
     sql = `
       select
         min(categories.name) as category,
-        sum(bill.amount) as total_amount
+        sum(
+          case bill.type
+          when 0 then -bill.amount
+          when 1 then bill.amount
+          end
+        ) as total_amount
       from bill
       left join categories
       on bill.category = categories.id
@@ -91,6 +96,7 @@ async function getBillList(ctx) {
       group by type
       order by total_amount desc
     `
+    logInfo(ctx, sql)
     const statisticsByType = await AccountBookSqlite.all(sql)
     let netIncome = 0
     statisticsByType.forEach(item => {
